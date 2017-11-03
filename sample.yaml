@@ -9,7 +9,7 @@ Description: 'AWS CloudFormation Sample Template S3_Website_With_CloudFront_Dist
   for the AWS resources used if you create a stack from this template.'
 Parameters:
   MainVPC:
-    Type: String
+    Type: AWS::EC2::VPC::Id
   HostedZone:
     Type: String
     Description: The DNS name of an existing Amazon Route 53 hosted zone
