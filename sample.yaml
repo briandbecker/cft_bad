@@ -8,6 +8,8 @@ Description: 'AWS CloudFormation Sample Template S3_Website_With_CloudFront_Dist
   Route 53 DNS record, an S3 bucket and a CloudFront distribution. You will be billed
   for the AWS resources used if you create a stack from this template.'
 Parameters:
+  MainVPC:
+    Type: String
   HostedZone:
     Type: String
     Description: The DNS name of an existing Amazon Route 53 hosted zone
@@ -55,7 +57,7 @@ Resources:
     Properties:
       GroupDescription: Allow http to client host
       VpcId:
-        Ref: myVPC
+        Ref: !Ref MainVPC
       SecurityGroupIngress:
       - IpProtocol: tcp
         FromPort: '22'
