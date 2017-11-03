@@ -67,6 +67,10 @@ Resources:
         FromPort: '80'
         ToPort: '80'
         CidrIp: 0.0.0.0/0
+  AnotherS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      AccessControl: PublicReadWrite
   S3BucketForTest:
     Type: AWS::S3::Bucket
     Properties:
